@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Feedback Form</title>
+</head>
+<body>
+    <h1>Fake Feedback Form</h1>
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="button" id="submitFeedback">Submit Feedback</button>
+    </form>
+
+    <script>
+        document.getElementById("submitFeedback").addEventListener("click", function() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const feedback = document.getElementById("feedback").value;
+
+            // Simulate displaying submitted data
+            const displayData = `Name: ${name}\nEmail: ${email}\nFeedback: ${feedback}`;
+            alert(displayData);
+            
+            // Reset the form
+            document.getElementById("feedbackForm").reset();
+        });
+    </script>
+</body>
+</html>
